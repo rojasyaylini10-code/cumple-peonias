@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#160b18">
+  <title>Una pequeña sorpresa 🌸</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <section id="intro" class="screen active">
+      <div class="stars"></div>
+      <div class="intro-card">
+        <div class="tiny-heart">♡</div>
+        <p class="eyebrow">UNA PEQUEÑA SORPRESA</p>
+        <h1>Para ti, <span id="friendNameIntro">mi niña bonita</span> 💗</h1>
+        <p class="intro-text">Hay algo que preparé especialmente para ti.</p>
+        <button id="startBtn" class="main-btn">Toca para abrir ✨</button>
+        <p class="hint">Sube el volumen si quieres escuchar el efecto musical.</p>
+      </div>
+    </section>
+
+    <section id="garden" class="screen">
+      <div class="moon"></div>
+      <div id="petals"></div>
+      <div id="waterfall">
+        <div class="water-glow"></div>
+        <div class="water-stream s1"></div>
+        <div class="water-stream s2"></div>
+        <div class="water-stream s3"></div>
+        <div class="water-stream s4"></div>
+        <div class="water-pool"></div>
+      </div>
+
+      <div class="garden-title">
+        <p>porque sé cuánto te gustan...</p>
+        <h2>🌸 las peonías 🌸</h2>
+      </div>
+
+      <div class="peony p1" aria-hidden="true"></div>
+      <div class="peony p2" aria-hidden="true"></div>
+      <div class="peony p3" aria-hidden="true"></div>
+      <div class="peony p4" aria-hidden="true"></div>
+      <div class="peony p5" aria-hidden="true"></div>
+      <div class="peony p6" aria-hidden="true"></div>
+
+      <div class="message-card" id="messageCard">
+        <div class="card-flower">🌸</div>
+        <p class="small-title">HOY CELEBRAMOS TU VIDA</p>
+        <h2>¡Feliz cumpleaños, <span id="friendName">mi niña bonita</span>! 🎂</h2>
+        <p id="message">
+          Deseo de corazón que este nuevo año de tu vida esté lleno de momentos
+          bonitos, risas, sueños cumplidos y personas que te quieran muchísimo.
+        </p>
+        <p>
+          Y como sé cuánto amas las peonías, hice que este pequeño jardín
+          fuera especialmente para ti. 🌸💗
+        </p>
+        <div class="signature">Con mucho cariño,<br><strong>Alguien que te quiere mucho ♡</strong></div>
+      </div>
+
+      <button id="replayBtn" class="replay">↻ Ver de nuevo</button>
+    </section>
+  </main>
+
+  <!-- Opcional: si quieres añadir una canción tuya, ponla en la carpeta como music.mp3
+       y descomenta la siguiente línea. El sitio funciona aunque no pongas música. -->
+  <!-- <audio id="music" src="music.mp3" loop></audio> -->
+
+  <script src="script.js"></script>
+</body>
+</html>

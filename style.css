@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+:root {
+  --night: #100812;
+  --wine: #3b1733;
+  --pink: #f7b4c9;
+  --light-pink: #ffe4ee;
+  --peony: #ef7fa8;
+  --deep-pink: #c94f80;
+  --cream: #fff8f4;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: var(--night);
+  color: var(--cream);
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+button { font: inherit; }
+
+.screen {
+  position: fixed;
+  inset: 0;
+  display: none;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.screen.active { display: block; }
+
+#intro {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(190, 92, 138, .22), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(93, 67, 120, .18), transparent 30%),
+    linear-gradient(145deg, #0b0710, #241024 55%, #120a16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.intro-card {
+  width: min(92vw, 560px);
+  padding: 38px 28px 32px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 28px;
+  background: rgba(255,255,255,.06);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 80px rgba(0,0,0,.45);
+  animation: cardIn 1.2s ease both;
+}
+
+.tiny-heart {
+  font-family: Georgia, serif;
+  font-size: 76px;
+  line-height: .8;
+  color: var(--pink);
+  text-shadow: 0 0 30px rgba(247,180,201,.55);
+  animation: heartbeat 1.7s ease-in-out infinite;
+}
+
+.eyebrow, .small-title {
+  letter-spacing: .22em;
+  font-size: 11px;
+  opacity: .8;
+}
+
+h1 {
+  margin: 15px 0 12px;
+  font-size: clamp(34px, 9vw, 58px);
+  font-weight: 500;
+  line-height: .95;
+}
+
+h1 span, .garden-title h2 { color: var(--pink); }
+
+.intro-text {
+  margin: 0 auto 24px;
+  max-width: 410px;
+  font-size: 20px;
+  line-height: 1.25;
+  opacity: .9;
+}
+
+.main-btn, .replay {
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #2a1021;
+  background: linear-gradient(135deg, #ffd6e3, #f09ab7);
+  box-shadow: 0 10px 35px rgba(239,127,168,.28);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.main-btn {
+  padding: 14px 25px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.main-btn:hover, .replay:hover { transform: translateY(-2px) scale(1.02); }
+
+.hint {
+  margin: 18px 0 0;
+  font-size: 12px;
+  opacity: .5;
+}
+
+/* Garden / waterfall */
+#garden {
+  background:
+    radial-gradient(circle at 70% 18%, rgba(247,180,201,.18), transparent 16%),
+    radial-gradient(circle at 50% 80%, rgba(63,105,122,.25), transparent 25%),
+    linear-gradient(#0b0710 0%, #180d1b 43%, #08151a 100%);
+}
+
+.moon {
+  position: absolute;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  top: 7vh;
+  right: 12vw;
+  background: #fff5e7;
+  box-shadow: 0 0 55px rgba(255,245,231,.38);
+  opacity: .9;
+}
+
+.stars::before, .stars::after {
+  content: "✦  ·   ✧     ·  ✦    ·      ✧  ·   ✦";
+  position: absolute;
+  inset: 7% 5% auto;
+  font-size: 18px;
+  letter-spacing: 12px;
+  color: rgba(255,240,248,.7);
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+
+.garden-title {
+  position: absolute;
+  z-index: 8;
+  top: 7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  text-align: center;
+  text-shadow: 0 3px 20px #000;
+  animation: fadeDown 1.2s .3s both;
+}
+
+.garden-title p {
+  margin: 0;
+  font-size: 17px;
+  opacity: .8;
+}
+
+.garden-title h2 {
+  margin: 4px 0;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(40px, 10vw, 66px);
+  font-weight: 400;
+}
+
+#waterfall {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 28vh;
+  width: min(52vw, 300px);
+  height: 65vh;
+  transform: translateX(-50%);
+  overflow: hidden;
+  border-radius: 45% 45% 18% 18%;
+  opacity: 0;
+  animation: waterfallIn 2s 1s ease forwards;
+}
+
+.water-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 20%, rgba(173,232,240,.32), transparent 45%);
+  filter: blur(8px);
+}
+
+.water-stream {
+  position: absolute;
+  top: -5%;
+  width: 23%;
+  height: 110%;
+  border-radius: 50%;
+  background: repeating-linear-gradient(
+    100deg,
+    rgba(210,250,255,.06) 0 8px,
+    rgba(120,207,225,.27) 9px 13px,
+    rgba(235,255,255,.12) 14px 20px
+  );
+  filter: blur(1px);
+  animation: flow 1.25s linear infinite;
+}
+
+.s1 { left: 10%; animation-delay: -.2s; }
+.s2 { left: 30%; width: 28%; animation-duration: 1.05s; }
+.s3 { left: 54%; width: 19%; animation-duration: 1.45s; }
+.s4 { left: 73%; width: 14%; animation-duration: .9s; }
+
+.water-pool {
+  position: absolute;
+  left: -15%;
+  right: -15%;
+  bottom: -3%;
+  height: 22%;
+  border-radius: 50% 50% 0 0;
+  background:
+    radial-gradient(ellipse, rgba(169,234,242,.25), transparent 60%),
+    repeating-radial-gradient(ellipse at 50% 30%, rgba(183,240,245,.2) 0 2px, transparent 3px 14px);
+  animation: ripple 2s ease-in-out infinite;
+}
+
+/* Peonías hechas con CSS */
+.peony {
+  position: absolute;
+  z-index: 6;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(.25);
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
+  animation: bloom 1.8s cubic-bezier(.2,.8,.2,1) forwards, sway 4s 2s ease-in-out infinite alternate;
+}
+
+.peony::before, .peony::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 48% 52% 50% 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #fff2c9 0 8%, transparent 9%),
+    radial-gradient(circle at 48% 38%, #f7b0c6 0 22%, #ed83aa 23% 43%, #d95e8d 44% 62%, #b83e70 63% 100%);
+  transform: rotate(22deg);
+  box-shadow:
+    -20px 5px 0 -2px #ee91b0,
+    18px 2px 0 -3px #d96591,
+    0 20px 0 -4px #f1a0ba;
+}
+
+.peony::after {
+  inset: 20px;
+  transform: rotate(-28deg);
+  background:
+    radial-gradient(circle at 50% 50%, #ffe9a8 0 11%, #f8d67f 12% 18%, transparent 19%),
+    repeating-conic-gradient(from 10deg, #ffd2df 0 18deg, #f28cad 18deg 38deg);
+  box-shadow: none;
+}
+
+.p1 { left: 6%; top: 33%; animation-delay: 1.7s, 3.5s; }
+.p2 { right: 5%; top: 39%; animation-delay: 2.0s, 3.8s; }
+.p3 { left: 13%; bottom: 10%; transform-origin: 50% 90%; animation-delay: 2.3s, 4.1s; }
+.p4 { right: 13%; bottom: 8%; animation-delay: 2.6s, 4.4s; }
+.p5 { left: 50%; top: 30%; width: 120px; height: 120px; margin-left: -60px; animation-delay: 2.9s, 4.7s; }
+.p6 { left: 50%; bottom: 4%; width: 110px; height: 110px; margin-left: -55px; animation-delay: 3.2s, 5s; }
+
+.message-card {
+  position: absolute;
+  z-index: 12;
+  left: 50%;
+  top: 50%;
+  width: min(88vw, 430px);
+  max-height: 72vh;
+  overflow: auto;
+  transform: translate(-50%, -50%) scale(.75);
+  padding: 30px 26px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 28px;
+  background: rgba(24, 11, 24, .76);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 90px rgba(0,0,0,.55);
+  opacity: 0;
+  animation: messageIn 1.3s 4.8s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.card-flower { font-size: 38px; }
+
+.message-card h2 {
+  margin: 5px 0 16px;
+  font-family: "Great Vibes", cursive;
+  color: var(--pink);
+  font-size: clamp(38px, 10vw, 54px);
+  font-weight: 400;
+  line-height: .95;
+}
+
+.message-card p {
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 10px 0;
+}
+
+.message-card .signature {
+  margin-top: 18px;
+  font-size: 16px;
+  color: #ffd6e3;
+}
+
+.replay {
+  position: absolute;
+  z-index: 20;
+  right: 16px;
+  bottom: 16px;
+  padding: 8px 14px;
+  font-size: 14px;
+  opacity: .75;
+}
+
+/* Falling petals */
+.petal {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 15px;
+  border-radius: 80% 20% 80% 20%;
+  background: #f5a7bf;
+  opacity: .75;
+  animation: fall linear forwards;
+}
+
+/* Animations */
+@keyframes cardIn { from { opacity:0; transform: translateY(20px) scale(.97); } to { opacity:1; transform:none; } }
+@keyframes heartbeat { 50% { transform: scale(1.12); } }
+@keyframes twinkle { to { opacity: .25; transform: translateY(5px); } }
+@keyframes fadeDown { from { opacity:0; transform: translate(-50%,-20px); } to { opacity:1; transform: translate(-50%,0); } }
+@keyframes waterfallIn { from { opacity:0; transform:translateX(-50%) scaleY(.3); } to { opacity:1; transform:translateX(-50%) scaleY(1); } }
+@keyframes flow { from { background-position: 0 0; } to { background-position: 0 120px; } }
+@keyframes ripple { 50% { transform: scaleX(1.06); } }
+@keyframes bloom { to { opacity:1; transform:scale(1); } }
+@keyframes sway { from { rotate:-3deg; } to { rotate:3deg; } }
+@keyframes messageIn { to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
+@keyframes fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(540deg); opacity: 0; } }
+
+@media (max-width: 480px) {
+  .moon { width: 62px; height: 62px; right: 9vw; }
+  .garden-title { top: 5vh; }
+  .garden-title p { font-size: 14px; }
+  #waterfall { top: 25vh; width: 48vw; }
+  .peony { width: 65px; height: 65px; }
+  .p5 { width: 90px; height: 90px; margin-left: -45px; }
+  .p6 { width: 82px; height: 82px; margin-left: -41px; }
+  .message-card { max-height: 68vh; padding: 24px 20px; }
+  .message-card p { font-size: 16px; }
+  .replay { font-size: 12px; }
+}
