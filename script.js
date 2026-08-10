@@ -2,9 +2,9 @@
 // PERSONALIZA AQUÍ TU REGALO 💗
 // =============================
 const CONFIG = {
-  nombre: "mi niña bonita", // <-- cambia esto por el nombre de tu amiga
+  nombre: "Ashlyn",
   mensaje:
-    "Deseo de corazón que este nuevo año de tu vida esté lleno de momentos bonitos, risas, sueños cumplidos y personas que te quieran muchísimo."
+    "Hoy quiero desearle un muy feliz cumpleaños y agradecerle por ser una persona tan linda conmigo. Sabe que le tengo un aprecio muy grande. Espero que este nuevo año de su vida venga lleno de momentos bonitos, muchas alegrías, sueños cumplidos y personas que la quieran muchísimo. Sobre todo, deseo que Dios la bendiga siempre, la ilumine y esté presente en cada etapa de su vida. Que sea Él quien guíe sus pasos, la cuide, le dé fortaleza y la acompañe en cada decisión y cada camino que tome. Nunca olvide lo especial que es. 🌸 La quiero mucho, Soto. 💗 ¡Feliz cumpleaños! 🎂🌷"
 };
 
 // Coloca el nombre y mensaje en la página.
