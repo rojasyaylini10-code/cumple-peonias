@@ -105,7 +105,9 @@ h1 span, .garden-title h2 { color: var(--pink); }
   font-weight: 600;
 }
 
-.main-btn:hover, .replay:hover { transform: translateY(-2px) scale(1.02); }
+.main-btn:hover, .replay:hover {
+  transform: translateY(-2px) scale(1.02);
+}
 
 .hint {
   margin: 18px 0 0;
@@ -113,24 +115,39 @@ h1 span, .garden-title h2 { color: var(--pink); }
   opacity: .5;
 }
 
-/* Garden / waterfall */
+/* =========================
+   JARDÍN DE PEONÍAS
+   ========================= */
+
 #garden {
   background:
-    radial-gradient(circle at 70% 18%, rgba(247,180,201,.18), transparent 16%),
-    radial-gradient(circle at 50% 80%, rgba(63,105,122,.25), transparent 25%),
-    linear-gradient(#0b0710 0%, #180d1b 43%, #08151a 100%);
+    radial-gradient(circle at 50% 48%, rgba(113, 40, 84, .20), transparent 35%),
+    linear-gradient(145deg, #09050c 0%, #190b19 55%, #0c0610 100%);
+}
+
+/* Brillo suave detrás de las flores */
+#garden::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 154, 194, .11), transparent 18%),
+    radial-gradient(circle at 88% 24%, rgba(255, 118, 177, .10), transparent 20%),
+    radial-gradient(circle at 15% 90%, rgba(244, 142, 183, .10), transparent 20%),
+    radial-gradient(circle at 85% 90%, rgba(255, 120, 173, .09), transparent 22%);
+  pointer-events: none;
 }
 
 .moon {
   position: absolute;
-  width: 95px;
-  height: 95px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  top: 7vh;
-  right: 12vw;
+  top: 6vh;
+  right: 10vw;
   background: #fff5e7;
-  box-shadow: 0 0 55px rgba(255,245,231,.38);
-  opacity: .9;
+  box-shadow: 0 0 55px rgba(255,245,231,.32);
+  opacity: .75;
 }
 
 .stars::before, .stars::after {
@@ -146,7 +163,7 @@ h1 span, .garden-title h2 { color: var(--pink); }
 .garden-title {
   position: absolute;
   z-index: 8;
-  top: 7vh;
+  top: 5vh;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -168,126 +185,216 @@ h1 span, .garden-title h2 { color: var(--pink); }
   font-weight: 400;
 }
 
+/* Quitamos el protagonismo de la cascada para que las peonías sean el foco */
 #waterfall {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   left: 50%;
-  top: 28vh;
-  width: min(52vw, 300px);
-  height: 65vh;
+  top: 34vh;
+  width: min(42vw, 230px);
+  height: 45vh;
   transform: translateX(-50%);
-  overflow: hidden;
-  border-radius: 45% 45% 18% 18%;
-  opacity: 0;
-  animation: waterfallIn 2s 1s ease forwards;
+  opacity: .18;
+  filter: blur(5px);
 }
 
 .water-glow {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 20%, rgba(173,232,240,.32), transparent 45%);
-  filter: blur(8px);
+  background: radial-gradient(ellipse, rgba(221, 172, 205, .18), transparent 65%);
 }
 
 .water-stream {
   position: absolute;
-  top: -5%;
-  width: 23%;
-  height: 110%;
+  top: 0;
+  width: 18%;
+  height: 100%;
   border-radius: 50%;
-  background: repeating-linear-gradient(
-    100deg,
-    rgba(210,250,255,.06) 0 8px,
-    rgba(120,207,225,.27) 9px 13px,
-    rgba(235,255,255,.12) 14px 20px
-  );
-  filter: blur(1px);
-  animation: flow 1.25s linear infinite;
+  background: linear-gradient(to bottom, transparent, rgba(214, 170, 208, .16), transparent);
 }
 
-.s1 { left: 10%; animation-delay: -.2s; }
-.s2 { left: 30%; width: 28%; animation-duration: 1.05s; }
-.s3 { left: 54%; width: 19%; animation-duration: 1.45s; }
-.s4 { left: 73%; width: 14%; animation-duration: .9s; }
+.s1 { left: 10%; }
+.s2 { left: 30%; }
+.s3 { left: 52%; }
+.s4 { left: 72%; }
 
 .water-pool {
   position: absolute;
   left: -15%;
   right: -15%;
-  bottom: -3%;
-  height: 22%;
-  border-radius: 50% 50% 0 0;
-  background:
-    radial-gradient(ellipse, rgba(169,234,242,.25), transparent 60%),
-    repeating-radial-gradient(ellipse at 50% 30%, rgba(183,240,245,.2) 0 2px, transparent 3px 14px);
-  animation: ripple 2s ease-in-out infinite;
+  bottom: 0;
+  height: 15%;
+  border-radius: 50%;
+  background: rgba(200, 151, 195, .10);
 }
 
-/* Peonías hechas con CSS */
+/* =========================
+   PEONÍAS MÁS RECONOCIBLES
+   ========================= */
+
 .peony {
   position: absolute;
   z-index: 6;
-  width: 90px;
-  height: 90px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   opacity: 0;
-  transform: scale(.25);
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.25));
-  animation: bloom 1.8s cubic-bezier(.2,.8,.2,1) forwards, sway 4s 2s ease-in-out infinite alternate;
+  transform: scale(.2);
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,.42));
+  animation:
+    bloom 1.6s cubic-bezier(.2,.8,.2,1) forwards,
+    sway 5s 2s ease-in-out infinite alternate;
 }
 
-.peony::before, .peony::after {
+/* Muchas capas concéntricas para dar el aspecto de pétalos de peonía */
+.peony::before {
   content: "";
   position: absolute;
-  inset: 8px;
-  border-radius: 48% 52% 50% 50%;
+  inset: 0;
+  border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 50%, #fff2c9 0 8%, transparent 9%),
-    radial-gradient(circle at 48% 38%, #f7b0c6 0 22%, #ed83aa 23% 43%, #d95e8d 44% 62%, #b83e70 63% 100%);
-  transform: rotate(22deg);
+    radial-gradient(circle at 50% 50%,
+      #f9d57d 0 5%,
+      #d85b89 5.5% 9%,
+      transparent 9.5%),
+    repeating-conic-gradient(
+      from 0deg,
+      #f7a9c2 0deg 12deg,
+      #e878a4 12deg 24deg,
+      #ffd2df 24deg 36deg,
+      #d95c8d 36deg 48deg
+    );
+  -webkit-mask:
+    radial-gradient(circle at center,
+      transparent 0 8%,
+      #000 9% 25%,
+      transparent 26% 29%,
+      #000 30% 43%,
+      transparent 44% 47%,
+      #000 48% 61%,
+      transparent 62% 65%,
+      #000 66% 100%);
+  mask:
+    radial-gradient(circle at center,
+      transparent 0 8%,
+      #000 9% 25%,
+      transparent 26% 29%,
+      #000 30% 43%,
+      transparent 44% 47%,
+      #000 48% 61%,
+      transparent 62% 65%,
+      #000 66% 100%);
   box-shadow:
-    -20px 5px 0 -2px #ee91b0,
-    18px 2px 0 -3px #d96591,
-    0 20px 0 -4px #f1a0ba;
+    inset 0 0 25px rgba(255,255,255,.18),
+    inset 0 -18px 25px rgba(116,25,66,.28);
 }
 
+/* Pétalos interiores */
 .peony::after {
-  inset: 20px;
-  transform: rotate(-28deg);
+  content: "";
+  position: absolute;
+  inset: 19%;
+  border-radius: 50%;
   background:
-    radial-gradient(circle at 50% 50%, #ffe9a8 0 11%, #f8d67f 12% 18%, transparent 19%),
-    repeating-conic-gradient(from 10deg, #ffd2df 0 18deg, #f28cad 18deg 38deg);
-  box-shadow: none;
+    radial-gradient(circle at 50% 50%, #f8d77e 0 7%, #b83c70 8% 12%, transparent 13%),
+    repeating-conic-gradient(
+      from 18deg,
+      #ffdbe6 0deg 20deg,
+      #ee7fa8 20deg 40deg,
+      #c94f80 40deg 60deg
+    );
+  box-shadow:
+    0 0 0 8px rgba(255,210,225,.22),
+    inset 0 0 16px rgba(101,18,55,.22);
 }
 
-.p1 { left: 6%; top: 33%; animation-delay: 1.7s, 3.5s; }
-.p2 { right: 5%; top: 39%; animation-delay: 2.0s, 3.8s; }
-.p3 { left: 13%; bottom: 10%; transform-origin: 50% 90%; animation-delay: 2.3s, 4.1s; }
-.p4 { right: 13%; bottom: 8%; animation-delay: 2.6s, 4.4s; }
-.p5 { left: 50%; top: 30%; width: 120px; height: 120px; margin-left: -60px; animation-delay: 2.9s, 4.7s; }
-.p6 { left: 50%; bottom: 4%; width: 110px; height: 110px; margin-left: -55px; animation-delay: 3.2s, 5s; }
+/* Sépalos/hojitas detrás */
+.p1, .p3, .p5 {
+  box-shadow:
+    28px 82px 0 -18px rgba(38,67,39,.85),
+    -38px 72px 0 -20px rgba(38,67,39,.72);
+}
+
+.p2, .p4, .p6 {
+  box-shadow:
+    -30px 82px 0 -18px rgba(38,67,39,.85),
+    38px 70px 0 -20px rgba(38,67,39,.72);
+}
+
+.p1 {
+  left: -30px;
+  top: 20%;
+  width: 190px;
+  height: 190px;
+  animation-delay: .4s, 2.5s;
+}
+
+.p2 {
+  right: -28px;
+  top: 24%;
+  width: 180px;
+  height: 180px;
+  animation-delay: .7s, 2.8s;
+}
+
+.p3 {
+  left: -35px;
+  bottom: -18px;
+  width: 205px;
+  height: 205px;
+  animation-delay: 1s, 3.1s;
+}
+
+.p4 {
+  right: -32px;
+  bottom: -15px;
+  width: 200px;
+  height: 200px;
+  animation-delay: 1.3s, 3.4s;
+}
+
+.p5 {
+  left: 12%;
+  top: 5%;
+  width: 120px;
+  height: 120px;
+  animation-delay: 1.6s, 3.7s;
+}
+
+.p6 {
+  right: 12%;
+  top: 8%;
+  width: 125px;
+  height: 125px;
+  animation-delay: 1.9s, 4s;
+}
 
 .message-card {
   position: absolute;
   z-index: 12;
   left: 50%;
   top: 50%;
-  width: min(88vw, 430px);
-  max-height: 72vh;
+  width: min(84vw, 430px);
+  max-height: 70vh;
   overflow: auto;
   transform: translate(-50%, -50%) scale(.75);
   padding: 30px 26px;
   text-align: center;
-  border: 1px solid rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.20);
   border-radius: 28px;
-  background: rgba(24, 11, 24, .76);
+  background: rgba(24, 11, 24, .80);
   backdrop-filter: blur(18px);
-  box-shadow: 0 25px 90px rgba(0,0,0,.55);
+  box-shadow:
+    0 25px 90px rgba(0,0,0,.55),
+    0 0 45px rgba(239,127,168,.10);
   opacity: 0;
-  animation: messageIn 1.3s 4.8s cubic-bezier(.2,.8,.2,1) forwards;
+  animation: messageIn 1.3s 3.2s cubic-bezier(.2,.8,.2,1) forwards;
 }
 
-.card-flower { font-size: 38px; }
+.card-flower {
+  font-size: 38px;
+  filter: drop-shadow(0 0 12px rgba(255,150,193,.45));
+}
 
 .message-card h2 {
   margin: 5px 0 16px;
@@ -320,40 +427,143 @@ h1 span, .garden-title h2 { color: var(--pink); }
   opacity: .75;
 }
 
-/* Falling petals */
+/* Pétalos que caen */
 .petal {
   position: absolute;
+  z-index: 10;
   top: -20px;
-  width: 10px;
-  height: 15px;
+  width: 12px;
+  height: 19px;
   border-radius: 80% 20% 80% 20%;
-  background: #f5a7bf;
-  opacity: .75;
+  background: linear-gradient(135deg, #ffd8e5, #d95c8d);
+  opacity: .78;
+  box-shadow: 0 2px 8px rgba(217,92,141,.25);
   animation: fall linear forwards;
 }
 
-/* Animations */
-@keyframes cardIn { from { opacity:0; transform: translateY(20px) scale(.97); } to { opacity:1; transform:none; } }
-@keyframes heartbeat { 50% { transform: scale(1.12); } }
-@keyframes twinkle { to { opacity: .25; transform: translateY(5px); } }
-@keyframes fadeDown { from { opacity:0; transform: translate(-50%,-20px); } to { opacity:1; transform: translate(-50%,0); } }
-@keyframes waterfallIn { from { opacity:0; transform:translateX(-50%) scaleY(.3); } to { opacity:1; transform:translateX(-50%) scaleY(1); } }
-@keyframes flow { from { background-position: 0 0; } to { background-position: 0 120px; } }
-@keyframes ripple { 50% { transform: scaleX(1.06); } }
-@keyframes bloom { to { opacity:1; transform:scale(1); } }
-@keyframes sway { from { rotate:-3deg; } to { rotate:3deg; } }
-@keyframes messageIn { to { opacity:1; transform:translate(-50%,-50%) scale(1); } }
-@keyframes fall { to { transform: translate3d(var(--drift), 110vh, 0) rotate(540deg); opacity: 0; } }
+/* Animaciones */
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(20px) scale(.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes heartbeat {
+  50% { transform: scale(1.12); }
+}
+
+@keyframes twinkle {
+  to { opacity: .25; transform: translateY(5px); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translate(-50%,-20px); }
+  to { opacity: 1; transform: translate(-50%,0); }
+}
+
+@keyframes bloom {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes sway {
+  from { rotate: -2deg; }
+  to { rotate: 2deg; }
+}
+
+@keyframes messageIn {
+  to {
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(540deg);
+    opacity: 0;
+  }
+}
 
 @media (max-width: 480px) {
-  .moon { width: 62px; height: 62px; right: 9vw; }
-  .garden-title { top: 5vh; }
-  .garden-title p { font-size: 14px; }
-  #waterfall { top: 25vh; width: 48vw; }
-  .peony { width: 65px; height: 65px; }
-  .p5 { width: 90px; height: 90px; margin-left: -45px; }
-  .p6 { width: 82px; height: 82px; margin-left: -41px; }
-  .message-card { max-height: 68vh; padding: 24px 20px; }
-  .message-card p { font-size: 16px; }
-  .replay { font-size: 12px; }
+  .moon {
+    width: 55px;
+    height: 55px;
+    right: 8vw;
+  }
+
+  .garden-title {
+    top: 4vh;
+  }
+
+  .garden-title p {
+    font-size: 13px;
+  }
+
+  .garden-title h2 {
+    font-size: 43px;
+  }
+
+  #waterfall {
+    display: none;
+  }
+
+  .peony {
+    width: 100px;
+    height: 100px;
+  }
+
+  .p1 {
+    left: -30px;
+    top: 20%;
+    width: 125px;
+    height: 125px;
+  }
+
+  .p2 {
+    right: -28px;
+    top: 24%;
+    width: 120px;
+    height: 120px;
+  }
+
+  .p3 {
+    left: -32px;
+    bottom: -12px;
+    width: 145px;
+    height: 145px;
+  }
+
+  .p4 {
+    right: -28px;
+    bottom: -10px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .p5 {
+    left: 7%;
+    top: 8%;
+    width: 80px;
+    height: 80px;
+  }
+
+  .p6 {
+    right: 7%;
+    top: 10%;
+    width: 82px;
+    height: 82px;
+  }
+
+  .message-card {
+    width: min(84vw, 390px);
+    max-height: 67vh;
+    padding: 24px 20px;
+  }
+
+  .message-card p {
+    font-size: 16px;
+  }
+
+  .replay {
+    font-size: 12px;
+  }
 }
