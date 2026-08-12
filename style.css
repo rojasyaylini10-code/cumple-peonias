@@ -567,3 +567,53 @@ h1 span, .garden-title h2 { color: var(--pink); }
     font-size: 12px;
   }
 }
+/* =========================================================
+   ARREGLO DEFINITIVO DE LAS PEONÍAS 🌸
+   Pega este bloque AL FINAL de style.css.
+   Reemplaza las flores circulares anteriores.
+   ========================================================= */
+
+.peony {
+  position: absolute !important;
+  z-index: 6 !important;
+  width: 180px !important;
+  height: 198px !important;
+  border-radius: 0 !important;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjIwIj4KPGRlZnM+CjxmaWx0ZXIgaWQ9InMiPjxmZURyb3BTaGFkb3cgZHg9IjAiIGR5PSI4IiBzdGREZXZpYXRpb249IjYiIGZsb29kLWNvbG9yPSIjNGQxNzM1IiBmbG9vZC1vcGFjaXR5PSIuMzUiLz48L2ZpbHRlcj4KPC9kZWZzPgo8Zz4KPHBhdGggZD0iTTgyIDE1M0M1MCAxMzQgMjUgMTQzIDE4IDE2N2MyOCAxMyA1MyA4IDcyLTEweiIgZmlsbD0iIzMxNWEzYSIgc3Ryb2tlPSIjMjAzYzI5IiBzdHJva2Utd2lkdGg9IjIiLz4KPHBhdGggZD0iTTExOCAxNTNjMzItMTkgNTctMTAgNjQgMTQtMjggMTMtNTMgOC03Mi0xMHoiIGZpbGw9IiMyOTRkMzQiIHN0cm9rZT0iIzIwM2MyOSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjwvZz4KPGcgZmlsdGVyPSJ1cmwoI3MpIj4KPGcgZmlsbD0iI2YwYTJiYiIgc3Ryb2tlPSIjZDM2NThkIiBzdHJva2Utd2lkdGg9IjEuMiI+CjxwYXRoIGQ9Ik0xMDAgMTEyQzcyIDk4IDM4IDc4IDM4IDUyYzAtMTcgMTYtMjcgMzAtMTcgMTcgMTIgMjUgNDMgMzIgNzd6Ii8+CjxwYXRoIGQ9Ik0xMDAgMTEyQzc3IDg4IDU1IDUxIDY0IDI5YzctMTYgMjUtMTggMzQtMyAxMCAxNyA4IDUxIDIgODZ6Ii8+CjxwYXRoIGQ9Ik0xMDAgMTEyQzg4IDgyIDgyIDM5IDk4IDI0YzEyLTEyIDI5LTUgMzEgMTIgMyAyMC0xMiA1MC0yOSA3NnoiLz4KPHBhdGggZD0iTTEwMCAxMTJjMTItMzAgMTgtNzMgMi04OC0xMi0xMi0yOS01LTMxIDEyLTMgMjAgMTIgNTAgMjkgNzZ6Ii8+CjxwYXRoIGQ9Ik0xMDAgMTEyYzIzLTI0IDQ1LTYxIDM2LTgzLTctMTYtMjUtMTgtMzQtMy0xMCAxNy04IDUxLTIgODZ6Ii8+CjxwYXRoIGQ9Ik0xMDAgMTEyYzI4LTE0IDYyLTM0IDYyLTYwIDAtMTctMTYtMjctMzAtMTctMTcgMTItMjUgNDMtMzIgNzd6Ii8+CjwvZz4KPGcgZmlsbD0iI2ZmZDVlMSIgc3Ryb2tlPSIjZDc2YjkyIiBzdHJva2Utd2lkdGg9IjEiPgo8cGF0aCBkPSJNMTAwIDEwOEM4MiA5MiA2MyA2NSA2OSA0OWM1LTEzIDE4LTE2IDI3LTUgMTAgMTIgOCAzOCA0IDY0eiIvPgo8cGF0aCBkPSJNMTAwIDEwOEM4NiA4NiA4MiA1NyA5MiA0NWM5LTEwIDIxLTUgMjQgOCA0IDE1LTUgMzgtMTYgNTV6Ii8+CjxwYXRoIGQ9Ik0xMDAgMTA4YzE0LTIyIDE4LTUxIDgtNjMtOS0xMC0yMS01LTI0IDgtNCAxNSA1IDM4IDE2IDU1eiIvPgo8cGF0aCBkPSJNMTAwIDEwOGMxOC0xNiAzNy00MyAzMS01OS01LTEzLTE4LTE2LTI3LTUtMTAgMTItOCAzOC00IDY0eiIvPgo8L2c+CjxnIGZpbGw9IiNmN2IwYzciIHN0cm9rZT0iI2QwNWM4NiIgc3Ryb2tlLXdpZHRoPSIuOSI+CjxwYXRoIGQ9Ik0xMDAgMTA2Yy0xMC0xMi0xNC0yOC03LTM2IDctOCAxNi00IDE5IDYgMyAxMC0zIDIyLTEyIDMweiIvPgo8cGF0aCBkPSJNMTAwIDEwNmMxMC0xMiAxNC0yOCA3LTM2LTctOC0xNi00LTE5IDYtMyAxMCAzIDIyIDEyIDMweiIvPgo8cGF0aCBkPSJNMTAwIDEwNmMtNS0xNC0yLTI5IDctMzMgOS00IDE1IDQgMTQgMTQtMSA5LTkgMTUtMjEgMTl6Ii8+CjxwYXRoIGQ9Ik0xMDAgMTA2YzUtMTQgMi0yOS03LTMzLTktNC0xNSA0LTE0IDE0IDEgOSA5IDE1IDIxIDE5eiIvPgo8L2c+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iMTkiIGZpbGw9IiNmZmU2YTEiIG9wYWNpdHk9Ii45NSIvPgo8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjciIGZpbGw9IiNlNGE0M2UiLz4KPGcgZmlsbD0iI2YzYzk1ZiI+CjxjaXJjbGUgY3g9Ijg3IiBjeT0iOTgiIHI9IjIiLz48Y2lyY2xlIGN4PSI5MSIgY3k9Ijg5IiByPSIyIi8+PGNpcmNsZSBjeD0iMTAwIiBjeT0iODYiIHI9IjIiLz4KPGNpcmNsZSBjeD0iMTA5IiBjeT0iODkiIHI9IjIiLz48Y2lyY2xlIGN4PSIxMTMiIGN5PSI5OCIgcj0iMiIvPjxjaXJjbGUgY3g9IjEwOSIgY3k9IjEwNyIgcj0iMiIvPgo8Y2lyY2xlIGN4PSI5MSIgY3k9IjEwNyIgcj0iMiIvPgo8L2c+CjwvZz48L3N2Zz4=") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  filter: drop-shadow(0 14px 18px rgba(0,0,0,.35)) !important;
+  opacity: 0 !important;
+  transform: scale(.35) !important;
+  transform-origin: center bottom !important;
+  animation:
+    bloom 1.6s cubic-bezier(.2,.8,.2,1) forwards,
+    sway 5s 2s ease-in-out infinite alternate !important;
+}
+
+/* MUY IMPORTANTE: elimina las dos ruedas creadas por el CSS anterior. */
+.peony::before,
+.peony::after {
+  content: none !important;
+  display: none !important;
+}
+
+.p1 { left:-28px !important; top:20% !important; width:180px !important; height:198px !important; animation-delay:.4s,2.5s !important; }
+.p2 { right:-28px !important; top:24% !important; width:180px !important; height:198px !important; animation-delay:.7s,2.8s !important; }
+.p3 { left:-35px !important; bottom:-15px !important; width:195px !important; height:210px !important; animation-delay:1s,3.1s !important; }
+.p4 { right:-32px !important; bottom:-12px !important; width:190px !important; height:205px !important; animation-delay:1.3s,3.4s !important; }
+.p5 { left:10% !important; top:8% !important; width:120px !important; height:132px !important; animation-delay:1.6s,3.7s !important; }
+.p6 { right:10% !important; top:9% !important; width:125px !important; height:138px !important; animation-delay:1.9s,4s !important; }
+
+@media (max-width:480px) {
+  .peony { width:120px !important; height:132px !important; }
+  .p1 { left:-32px !important; top:19% !important; width:128px !important; height:141px !important; }
+  .p2 { right:-30px !important; top:23% !important; width:125px !important; height:138px !important; }
+  .p3 { left:-34px !important; bottom:-8px !important; width:140px !important; height:154px !important; }
+  .p4 { right:-30px !important; bottom:-6px !important; width:138px !important; height:152px !important; }
+  .p5 { left:6% !important; top:8% !important; width:82px !important; height:90px !important; }
+  .p6 { right:6% !important; top:9% !important; width:86px !important; height:95px !important; }
+}
