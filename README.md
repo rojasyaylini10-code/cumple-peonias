@@ -1,7 +1,9 @@
-# 🌸 Cumpleaños de Ashlyn
+# Cumpleaños de Ashlyn 🌸
 
-Sube `index.html`, `style.css` y `script.js` directamente a la raíz del repositorio de GitHub.
+Versión con peonías de apariencia más realista, cascada animada, pétalos y mensaje personalizado.
 
-Después activa GitHub Pages desde **Settings → Pages → Deploy from a branch → main → / (root)**.
-
-Las peonías están dibujadas como SVG con múltiples capas de pétalos para evitar el aspecto de círculos simples.
+Archivos:
+- index.html
+- style.css
+- script.js
+- assets/ (imágenes decorativas de peonías)

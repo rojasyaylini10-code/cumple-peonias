@@ -3,86 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#100812">
   <title>Para Ashlyn 🌸</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="petals"></div><div id="sparkles"></div>
+  <div class="petals" aria-hidden="true"></div>
 
-  <!-- Peonía SVG reutilizable: muchos pétalos, no círculos -->
-  <svg class="defs" aria-hidden="true" width="0" height="0">
-    <defs>
-      <radialGradient id="pOuter"><stop offset="0" stop-color="#fbd0df"/><stop offset=".58" stop-color="#e889aa"/><stop offset="1" stop-color="#9e2459"/></radialGradient>
-      <radialGradient id="pInner"><stop offset="0" stop-color="#fff0f5"/><stop offset=".55" stop-color="#f2a4bd"/><stop offset="1" stop-color="#b72d66"/></radialGradient>
-      <filter id="flowerShadow"><feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000" flood-opacity=".55"/></filter>
-      <g id="peony">
-        <g filter="url(#flowerShadow)">
-          <ellipse cx="50" cy="26" rx="29" ry="43" fill="url(#pOuter)" transform="rotate(-25 50 50)"/>
-          <ellipse cx="50" cy="26" rx="29" ry="43" fill="url(#pOuter)" transform="rotate(25 50 50)"/>
-          <ellipse cx="74" cy="38" rx="29" ry="43" fill="url(#pOuter)" transform="rotate(52 74 38)"/>
-          <ellipse cx="76" cy="65" rx="30" ry="44" fill="url(#pOuter)" transform="rotate(82 76 65)"/>
-          <ellipse cx="55" cy="82" rx="30" ry="44" fill="url(#pOuter)" transform="rotate(112 55 82)"/>
-          <ellipse cx="30" cy="73" rx="30" ry="44" fill="url(#pOuter)" transform="rotate(145 30 73)"/>
-          <ellipse cx="24" cy="47" rx="30" ry="44" fill="url(#pOuter)" transform="rotate(176 24 47)"/>
-          <ellipse cx="35" cy="29" rx="30" ry="44" fill="url(#pOuter)" transform="rotate(205 35 29)"/>
-          <ellipse cx="50" cy="35" rx="23" ry="36" fill="url(#pInner)" transform="rotate(-40 50 50)"/>
-          <ellipse cx="65" cy="45" rx="23" ry="36" fill="url(#pInner)" transform="rotate(15 65 45)"/>
-          <ellipse cx="63" cy="62" rx="23" ry="36" fill="url(#pInner)" transform="rotate(60 63 62)"/>
-          <ellipse cx="48" cy="68" rx="23" ry="36" fill="url(#pInner)" transform="rotate(105 48 68)"/>
-          <ellipse cx="35" cy="59" rx="23" ry="36" fill="url(#pInner)" transform="rotate(150 35 59)"/>
-          <ellipse cx="37" cy="44" rx="23" ry="36" fill="url(#pInner)" transform="rotate(200 37 44)"/>
-          <path d="M50 38 C66 28 79 45 68 55 C78 66 61 78 51 65 C39 78 24 63 35 54 C23 43 39 29 50 38Z" fill="#f8bdd0"/>
-          <path d="M50 43 C61 35 70 47 62 54 C69 61 60 70 51 62 C42 70 32 60 39 53 C31 45 41 36 50 43Z" fill="#d95b87"/>
-          <circle cx="50" cy="53" r="9" fill="#8d1649"/>
-          <circle cx="45" cy="50" r="2" fill="#ffd96b"/><circle cx="53" cy="48" r="2" fill="#ffd96b"/><circle cx="57" cy="55" r="2" fill="#ffd96b"/><circle cx="49" cy="59" r="2" fill="#ffd96b"/>
-        </g>
-      </g>
-    </defs>
-  </svg>
+  <main class="scene">
+    <section class="intro" id="intro">
+      <div class="flower flower-a"><img src="assets/peonia-1.jpg" alt=""></div>
+      <div class="flower flower-b"><img src="assets/peonia-2.jpg" alt=""></div>
+      <div class="flower flower-c"><img src="assets/peonia-3.jpg" alt=""></div>
+      <div class="flower flower-d"><img src="assets/peonia-4.jpg" alt=""></div>
 
-  <main>
-    <section class="screen intro" id="intro">
-      <div class="flower f1"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-      <div class="flower f2"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-      <div class="flower f3 small"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-      <div class="flower f4 small"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-
-      <article class="intro-card">
-        <div class="heart">♡</div>
+      <div class="heart-card">
         <div class="eyebrow">UNA PEQUEÑA SORPRESA</div>
-        <h1>Para ti, <em>Ashlyn</em> <span>♥</span></h1>
-        <p>Hay algo que preparé especialmente para ti.</p>
-        <button id="open">Toca para abrir <b>✦</b></button>
-        <small>Una pequeña sorpresa hecha con mucho cariño.</small>
-      </article>
+        <h1>Para ti,<br><span>Ashlyn</span></h1>
+        <div class="heart">♡</div>
+        <p>Hay algo que preparé<br>especialmente para ti.</p>
+        <button id="openBtn">Toca para abrir ✦</button>
+      </div>
     </section>
 
-    <section class="screen letter" id="letter">
-      <div class="flower f5"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-      <div class="flower f6"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-      <div class="flower f7 small"><svg viewBox="0 0 100 100"><use href="#peony"/></svg></div>
-      <div class="music">♫ <span>Una sorpresa para ti...</span></div>
+    <section class="birthday" id="birthday">
+      <div class="waterfall" aria-hidden="true"></div>
 
-      <article class="letter-card">
-        <div class="stars">✦　♡　✦</div>
-        <h2>Feliz cumpleaños,</h2>
-        <h3>Ashlyn <span>♡</span></h3>
-        <div class="line"><i>♡</i></div>
-        <div class="message">
-          <p>Hoy es tu día, y solo quiero que sepas lo especial que eres. 💗</p>
-          <p>Gracias por ser tú, por tu luz, tu bondad y por hacer del mundo un lugar más bonito.</p>
-          <p>Deseo que este nuevo año de vida te llene de alegría, amor, sueños cumplidos y momentos increíbles.</p>
-          <p class="wish">¡Que seas muy feliz hoy y siempre! ✨</p>
-        </div>
-        <div class="signature"><span>Con mucho cariño,</span><strong>Yalyini 💗</strong></div>
+      <div class="garden">
+        <div class="garden-flower gf1"><img src="assets/peonia-1.jpg" alt=""></div>
+        <div class="garden-flower gf2"><img src="assets/peonia-2.jpg" alt=""></div>
+        <div class="garden-flower gf3"><img src="assets/peonia-3.jpg" alt=""></div>
+        <div class="garden-flower gf4"><img src="assets/peonia-4.jpg" alt=""></div>
+      </div>
+
+      <article class="letter">
+        <div class="small-heart">♡</div>
+        <h2>¡Feliz cumpleaños,<br><span>Ashlyn!</span> 🌸</h2>
+        <div class="ornament">──── ♡ ────</div>
+        <p>
+          Hoy quiero desearle un muy feliz cumpleaños y agradecerle por ser una persona
+          tan linda conmigo. Sabe que le tengo un aprecio muy grande.
+        </p>
+        <p>
+          Espero que este nuevo año de su vida venga lleno de momentos bonitos, muchas
+          alegrías, sueños cumplidos y personas que la quieran muchísimo.
+        </p>
+        <p>
+          Sobre todo, deseo que <strong>Dios la bendiga siempre, la ilumine y esté presente
+          en cada etapa de su vida</strong>. Que sea Él quien guíe sus pasos, la cuide,
+          le dé fortaleza y la acompañe en cada decisión y cada camino que tome.
+        </p>
+        <p><strong>Nunca olvide lo especial que es.</strong> 🌸</p>
+        <p>La quiero mucho, Soto. 💗<br><strong>¡Feliz cumpleaños!</strong> 🎂🌷</p>
+        <div class="signature">Con mucho cariño,<br><span>Marbely ♡</span></div>
       </article>
-      <button class="back" id="back">♡</button>
+
+      <button class="restart" id="restartBtn">Volver a empezar ↗</button>
     </section>
   </main>
+
   <script src="script.js"></script>
 </body>
 </html>
